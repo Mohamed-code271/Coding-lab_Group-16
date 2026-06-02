@@ -17,7 +17,7 @@ initialize_system() {
         mkdir reports
     fi
 
-    echo "System directories are ready!"
+    echo "System directories are ready!" - $(date)
 }
 
 initialize_system
