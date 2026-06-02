@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Member 1 - The Architect
+# This function initializes the hospital system directories
 initialize_system() {
     if [ ! -d "active_logs" ]; then
         echo "Creating active_logs directory..."
