@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+active_logs/
+archived_logs/
+reports/
+/tmp/hospital_system.pid
