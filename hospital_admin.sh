@@ -23,9 +23,12 @@ initialize_system() {
 initialize_system
 
 
-# securing code (-2-)
+# Member 2 - The Security Lead
+
+
 
 #This function secures the active_logs directory
+
 #Only the owner will have read and write permissions
 
 Secure_data() {
