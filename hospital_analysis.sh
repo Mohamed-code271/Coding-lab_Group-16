@@ -1,4 +1,7 @@
+
 #!/bin/bash
+# Member 5 - Clinical Analyst
+# This script analyzes critical vitals from hospital logs
 
 process_vitals() {
     mkdir -p reports
