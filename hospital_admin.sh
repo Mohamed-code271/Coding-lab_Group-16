@@ -33,6 +33,7 @@ secure_data() {
 }
 
 # Member 3 - The Orchestrator
+# Calling all functions in order
 initialize_system
 secure_data
 echo "System Environment Secured - $(date)"
