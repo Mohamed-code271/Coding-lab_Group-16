@@ -20,9 +20,6 @@ initialize_system() {
     echo "System directories are ready! - $(date)"
 }
 
-initialize_system
-
-
 # Member 2 - The Security Lead
 
 #This function secures the active_logs directory
