@@ -19,3 +19,16 @@ initialize_system() {
 
     echo "System directories are ready! - $(date)"
 }
+
+# Member 2 - The Security Lead
+
+#This function secures the active_logs directory
+
+#Only the owner will have read and write permissions
+
+secure_data() {
+          chmod 600 active_logs
+           ls -l active_logs
+           echo “permissions secured  for active_logs”
+}
+
