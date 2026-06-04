@@ -1,4 +1,4 @@
-#!/bin/bash
+m#!/bin/bash
 # Member 1 - The Architect
 # This function initializes the hospital system directories
 initialize_system() {
@@ -31,4 +31,11 @@ secure_data() {
            ls -l active_logs
            echo “permissions secured  for active_logs”
 }
+
+# Member 3 - The Orchestrator
+# Calling all functions in order
+# Script execution complete
+initialize_system
+secure_data
+echo "System Environment Secured - $(date)"
 
