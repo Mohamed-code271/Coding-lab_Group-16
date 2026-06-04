@@ -19,4 +19,3 @@ initialize_system() {
 
     echo "System directories are ready! - $(date)"
 }
-
