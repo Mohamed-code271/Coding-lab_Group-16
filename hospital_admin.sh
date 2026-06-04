@@ -31,3 +31,4 @@ secure_data() {
            ls -l active_logs
            echo “permissions secured  for active_logs”
 }
+
