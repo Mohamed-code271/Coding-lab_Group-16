@@ -17,6 +17,7 @@ process_vitals() {
 process_vitals
 
 # Member 6 - The Facility Auditor
+# This function calculates average water usage for ICU
 water_audit() {
     echo "Running water audit..."
 
