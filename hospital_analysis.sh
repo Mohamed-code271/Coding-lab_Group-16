@@ -1,18 +1,29 @@
-
 #!/bin/bash
+
 # Member 5 - Clinical Analyst
-# This script analyzes critical vitals from hospital logs
-
 process_vitals() {
+    echo "Processing critical vitals..."
+
+    HEART_RATE_LOG="active_logs/heart_rate.log"
+    TEMP_LOG="active_logs/temperature.log"
+    OUTPUT="reports/critical_alerts.txt"
+
     mkdir -p reports
-    > reports/critical_alerts.txt
+    > "$OUTPUT"
 
-    echo "Processing CRITICAL vitals..."
+    echo "=== CRITICAL ALERTS REPORT ===" >> "$OUTPUT"
+    echo "Generated on: $(date)" >> "$OUTPUT"
+    echo "===============================" >> "$OUTPUT"
 
-    grep "CRITICAL" active_logs/heart_rate* 2>/dev/null | awk '{print $1, $2, $3}' >> reports/critical_alerts.txt
-    grep "CRITICAL" active_logs/temperature* 2>/dev/null | awk '{print $1, $2, $3}' >> reports/critical_alerts.txt
+    echo "" >> "$OUTPUT"
+    echo "--- Heart Rate Critical Events ---" >> "$OUTPUT"
+    grep "CRITICAL" "$HEART_RATE_LOG" | awk -F',' '{print "Timestamp: " $1 " | Device_ID: " $2 " | Value: " $3}' >> "$OUTPUT"
 
-    echo "Done: reports/critical_alerts.txt created"
+    echo "" >> "$OUTPUT"
+    echo "--- Temperature Critical Events ---" >> "$OUTPUT"
+    grep "CRITICAL" "$TEMP_LOG" | awk -F',' '{print "Timestamp: " $1 " | Device_ID: " $2 " | Value: " $3}' >> "$OUTPUT"
+
+    echo "Critical alerts saved to $OUTPUT"
 }
 
 process_vitals
