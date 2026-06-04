@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Member 5 - Clinical Analyst
 # This script analyzes critical vitals from hospital logs
@@ -16,3 +15,19 @@ process_vitals() {
 }
 
 process_vitals
+
+# Member 6 - The Facility Auditor
+water_audit() {
+    echo "Running water audit..."
+
+    awk '/ICU_WATER_RESERVE/ {sum += $3; count++}
+    END {
+        if (count > 0)
+            printf "ICU Water Reserve Average Usage: %.2f\n", sum/count
+        else
+            printf "No ICU_WATER_RESERVE data found\n"
+    }' active_logs/water_usage*.log
+}
+
+water_audit
+
