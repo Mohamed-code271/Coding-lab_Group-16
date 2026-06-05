@@ -6,6 +6,8 @@
 archive_logs() {
     # Get current timestamp
     TIMESTAMP=$(date +"%Y%m%d_%H%M")
+    # This function moves logs from active_logs to archived_logs
+    # and renames them with a timestamp
 
     # Move heart rate log
     mv active_logs/heart_rate_log.log archived_logs/heart_rate_${TIMESTAMP}.log
