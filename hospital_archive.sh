@@ -20,7 +20,9 @@ archive_logs() {
 
     echo "Logs archived with timestamp: $TIMESTAMP"
 
-    # Recreate empty log files so engine keeps running
+    # Recreating empty log files so engine keeps running
+    # after archiving is complete
+
     touch active_logs/heart_rate_log.log
     touch active_logs/temperature_log.log
     touch active_logs/water_usage_log.log
